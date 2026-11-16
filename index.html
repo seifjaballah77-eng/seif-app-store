@@ -279,6 +279,7 @@ try{await navigator.clipboard.writeText(msg);feedback.textContent='تم نسخ �
 catch(e){const area=document.createElement('textarea');area.value=msg;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');feedback.textContent='تم نسخ تفاصيل طلبك. افتح Instagram والصقها في الرسالة.';}catch(err){feedback.textContent='تعذر النسخ تلقائيًا؛ يمكنك تحديد الملخص ونسخه يدويًا.';}area.remove();}
 });
 brief();
+document.getElementById('languageSelect')?.addEventListener('change',brief);
 })();
 </script>
 </body></html>
