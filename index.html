@@ -19,6 +19,30 @@ section{padding:66px 0}.section-head{display:flex;justify-content:space-between;
 @media(max-width:560px){.wrap{width:min(100% - 26px,1160px)}.nav{height:66px}.brandmark{width:38px;height:38px}.navcta{padding:9px 13px;font-size:11px}.hero{padding:52px 0 45px}.hero p{font-size:14px}.section-head{display:block}.projects,.pricing,.two{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}.project{min-height:230px}.contact{display:block;padding:25px}.contact .btn{margin-top:18px}.showrow .tile{min-height:90px;padding:12px}.tile strong{font-size:15px}}
 
 .nav-tools{display:flex;align-items:center;gap:10px}.language-label{display:flex;align-items:center;gap:5px;color:var(--gold);font-size:12px;font-weight:800;white-space:nowrap}.nav-tools select{appearance:none;cursor:pointer;color:var(--text);background:#191d2d;border:1px solid #f4c66a70;border-radius:13px;padding:10px 32px 10px 12px;font:700 12px Tahoma,Arial;outline:none;box-shadow:0 0 0 3px #f4c66a12}.nav-tools select:focus{border-color:var(--gold);box-shadow:0 0 0 4px #f4c66a25}.nav-tools select option{background:#111421;color:#fff}@media(max-width:560px){.nav-tools{gap:6px}.language-label span{display:none}.nav-tools select{padding:9px 8px;font-size:11px}.navcta{padding:9px 10px}}
+
+.builder{position:relative;overflow:hidden;border:1px solid #ffffff20;border-radius:30px;padding:clamp(20px,4vw,38px);background:linear-gradient(145deg,#171b2c 0%,#111421 55%,#201b35 100%);box-shadow:0 25px 80px #0005}
+.builder:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#a78bfa20;filter:blur(70px);top:-180px;inset-inline-end:-100px;pointer-events:none}
+.builder-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.builder-fields{display:grid;gap:17px}
+.builder-group{padding:16px;border:1px solid #ffffff16;background:#ffffff06;border-radius:17px}
+.builder-group>label,.builder-label{display:block;font-size:13px;font-weight:800;margin-bottom:9px;color:#f5f6ff}
+.builder select,.builder input[type=text]{width:100%;background:#0d101b;color:#fff;border:1px solid #363b52;border-radius:12px;padding:12px;font:inherit;font-size:13px;outline:none}
+.builder select:focus,.builder input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f4c66a18}
+.choice-list{display:flex;flex-wrap:wrap;gap:8px}
+.choice{display:flex;align-items:center;gap:7px;padding:8px 11px;border-radius:11px;background:#0d101b;border:1px solid #34394e;color:#d9dced;font-size:12px;cursor:pointer}
+.choice:has(input:checked){border-color:var(--gold);background:#f4c66a12;color:#fff}
+.choice input{accent-color:#f4c66a}
+.builder-result{position:sticky;top:105px;border:1px solid #f4c66a45;border-radius:20px;padding:22px;background:linear-gradient(155deg,#2a2442,#111b2b)}
+.builder-result .live{font-size:11px;color:var(--green);font-weight:800}
+.builder-result h3{margin:8px 0;font-size:22px}
+.builder-result p{font-size:12px;color:#c0c5d8}
+.result-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ffffff17;padding:9px 0;font-size:12px}
+.result-line span:last-child{color:var(--gold);font-weight:700;text-align:end}
+.builder-actions{display:grid;gap:9px;margin-top:18px}
+.builder-actions button{width:100%;cursor:pointer}
+.builder-hint{font-size:10px;color:#aeb5ca;margin-top:12px}
+.builder-feedback{min-height:20px;color:var(--green);font-size:11px;margin-top:8px}
+@media(max-width:760px){.builder-grid{grid-template-columns:1fr}.builder-result{position:static}}
 </style>
 </head>
 <body>
@@ -55,6 +79,36 @@ section{padding:66px 0}.section-head{display:flex;justify-content:space-between;
 <div class="feature"><div class="ico">🧪</div><b>تطوير تدريجي</b><p>تقسيم العمل إلى مراحل مع توضيح ما اكتمل وما لا يزال تجريبيًا.</p></div>
 <div class="feature"><div class="ico">🛠️</div><b>حلول حسب الطلب</b><p>تخصيص الوظائف والتصميم حسب طبيعة مشروعك وميزانيتك.</p></div>
 </div></div></section>
+
+<section id="builder"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">INTERACTIVE STUDIO</div><h2>ابنِ مشروعك بنفسك</h2><p>كوّن طلبك في خطوات بسيطة، وشاهد ملخص فكرتك مباشرة.</p></div></div>
+<div class="builder"><div class="builder-grid">
+<div class="builder-fields">
+<div class="builder-group"><label for="projectType">1 · ما الذي تريد إنشاءه؟</label><select id="projectType"><option value="تطبيق مخصص">تطبيق مخصص</option><option value="موقع إلكتروني">موقع إلكتروني</option><option value="تحويل موقع إلى تطبيق">تحويل موقع إلى تطبيق</option><option value="متجر إلكتروني">متجر إلكتروني</option><option value="تصميم أو هوية بصرية">تصميم أو هوية بصرية</option><option value="تطوير مشروع موجود">تطوير مشروع موجود</option></select></div>
+<div class="builder-group"><label for="projectPlatform">2 · أين سيعمل؟</label><select id="projectPlatform"><option>Android</option><option>iPhone / iOS</option><option>المتصفح والويب</option><option>Android و iOS والويب</option><option>كمبيوتر Windows</option><option>لم أحدد بعد</option></select></div>
+<div class="builder-group"><span class="builder-label">3 · ما الوظائف التي تحتاجها؟</span><div class="choice-list">
+<label class="choice"><input type="checkbox" value="تسجيل حسابات"> حسابات وتسجيل دخول</label>
+<label class="choice"><input type="checkbox" value="قاعدة بيانات"> قاعدة بيانات</label>
+<label class="choice"><input type="checkbox" value="لوحة تحكم للإدارة"> لوحة تحكم</label>
+<label class="choice"><input type="checkbox" value="دفع إلكتروني"> دفع إلكتروني</label>
+<label class="choice"><input type="checkbox" value="إشعارات"> إشعارات</label>
+<label class="choice"><input type="checkbox" value="دعم عدة لغات"> عدة لغات</label>
+<label class="choice"><input type="checkbox" value="وضع دون إنترنت"> عمل دون إنترنت</label>
+<label class="choice"><input type="checkbox" value="تصميم مخصص"> تصميم مخصص</label>
+</div></div>
+<div class="builder-group"><label for="projectBudget">4 · الميزانية التقريبية</label><select id="projectBudget"><option>أقل من 50 د.ت</option><option>50 – 150 د.ت</option><option>150 – 300 د.ت</option><option>300 – 500 د.ت</option><option>أكثر من 500 د.ت</option><option>أريد معرفة التكلفة أولًا</option></select></div>
+<div class="builder-group"><label for="projectDetails">5 · اشرح فكرتك باختصار (اختياري)</label><input id="projectDetails" type="text" maxlength="240" placeholder="مثال: تطبيق لحجز المواعيد وإدارة العملاء"></div>
+</div>
+<aside class="builder-result"><div class="live">● LIVE PROJECT BRIEF</div><h3>تصوّر طلبك</h3><p>هذا الملخص يتحدث تلقائيًا كلما غيّرت اختياراتك.</p>
+<div class="result-line"><span>نوع المشروع</span><span id="resultType">تطبيق مخصص</span></div>
+<div class="result-line"><span>المنصة</span><span id="resultPlatform">Android</span></div>
+<div class="result-line"><span>الوظائف</span><span id="resultFeatures">لم تحدد بعد</span></div>
+<div class="result-line"><span>الميزانية</span><span id="resultBudget">أقل من 50 د.ت</span></div>
+<div class="builder-actions"><button class="btn primary" id="copyBrief" type="button">نسخ تفاصيل طلبي</button><a class="btn" href="https://www.instagram.com/seif_app_store/" target="_blank" rel="noopener">الانتقال إلى Instagram ↗</a></div>
+<div class="builder-feedback" id="builderFeedback" aria-live="polite"></div><div class="builder-hint">الملخص ليس عقدًا أو عرض سعر نهائيًا. يتم تأكيد الإمكانيات والتكلفة بعد مراجعة التفاصيل.</div>
+</aside>
+</div></div>
+</div></section>
 <section id="prices"><div class="wrap"><div class="section-head"><div><div class="eyebrow">STARTING PRICES</div><h2>أسعار الخدمات</h2><p>أسعار بداية تقديرية بالدينار التونسي، ويُحدّد السعر النهائي بعد فهم الطلب.</p></div></div>
 <div class="pricing">
 <div class="price"><h3>تصاميم سريعة</h3><div class="amount">ابتداءً من 1 د.ت</div><p>صور بالذكاء الاصطناعي، أفكار بصرية، وبرومبتات جاهزة بسيطة.</p></div>
@@ -165,6 +219,30 @@ let saved="ar";try{saved=localStorage.getItem('seif-store-language')||"ar"}catch
 const selector=document.getElementById('languageSelect');
 if(selector){selector.value=saved;selector.addEventListener('change',()=>apply(selector.value));}
 apply(saved);
+})();
+</script>
+
+<script>
+(()=>{
+const type=document.getElementById('projectType'),platform=document.getElementById('projectPlatform'),budget=document.getElementById('projectBudget'),details=document.getElementById('projectDetails');
+if(!type)return;
+const ids=['resultType','resultPlatform','resultFeatures','resultBudget'];
+const getFeatures=()=>Array.from(document.querySelectorAll('.builder input[type=checkbox]:checked')).map(x=>x.value);
+function brief(){
+const features=getFeatures();
+document.getElementById(ids[0]).textContent=type.value;
+document.getElementById(ids[1]).textContent=platform.value;
+document.getElementById(ids[2]).textContent=features.length?features.join('، '):'لم تحدد بعد';
+document.getElementById(ids[3]).textContent=budget.value;
+return 'مرحبًا، أريد الاستفسار عن تنفيذ مشروع.\nنوع المشروع: '+type.value+'\nالمنصة: '+platform.value+'\nالوظائف المطلوبة: '+(features.length?features.join('، '):'لم أحدد بعد')+'\nالميزانية: '+budget.value+'\nتفاصيل إضافية: '+(details.value.trim()||'لا توجد')+'\nأرجو توضيح الإمكانيات والتكلفة والمدة.';
+}
+document.querySelectorAll('#builder select,#builder input').forEach(el=>el.addEventListener('input',brief));
+document.getElementById('copyBrief').addEventListener('click',async()=>{
+const msg=brief(),feedback=document.getElementById('builderFeedback');
+try{await navigator.clipboard.writeText(msg);feedback.textContent='تم نسخ تفاصيل طلبك. افتح Instagram والصقها في الرسالة.';}
+catch(e){const area=document.createElement('textarea');area.value=msg;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');feedback.textContent='تم نسخ تفاصيل طلبك. افتح Instagram والصقها في الرسالة.';}catch(err){feedback.textContent='تعذر النسخ تلقائيًا؛ يمكنك تحديد الملخص ونسخه يدويًا.';}area.remove();}
+});
+brief();
 })();
 </script>
 </body></html>
